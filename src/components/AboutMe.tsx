@@ -5,7 +5,7 @@ export default function AboutMe() {
       <p>Hi there! My name is Gabriel and I'm a fullstack developer.</p>
       <p>
         I am passionate about software engineering, innovation and technology in
-        general. I've been working with software development since 2020, and
+        general. I've been working with software development since 2021, and
         went through frontend, backend and fullstack positions (I'll also do
         some devops if you need too), and I'm pretty happy working with any of
         these. In the end of the day, what I really like is to see softwares
