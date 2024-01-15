@@ -77,7 +77,7 @@ export default function AboutMe() {
           />
           <motion.img
             {...imageSettings}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             src={profile}
             alt="My profile picture"
             initial="hidden"

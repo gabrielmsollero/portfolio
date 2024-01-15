@@ -12,11 +12,11 @@ function App() {
   return (
     <>
       <AboutMe />
-      <TechnologiesCarousel />
-      <Education />
-      <Responsiveness />
-      <ProfessionalExperience />
       <SocialMedias />
+      <Education />
+      <TechnologiesCarousel />
+      <ProfessionalExperience />
+      <Responsiveness />
       <OtherProjects />
     </>
   );

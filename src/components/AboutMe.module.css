@@ -1,11 +1,20 @@
 .content {
   display: flex;
   flex-direction: row;
+  min-height: calc(100vh - 2rem - 200px); /* From padding-top & waves */
+  max-width: 1280px;
+  padding: 2rem;
+  margin: auto;
+}
+
+.content h1 {
+  margin-top: 1rem;
 }
 
 .textWrapper {
   width: 75%;
   padding-right: 5rem;
+  margin: auto;
 }
 
 .avatarWrapper {
@@ -13,7 +22,7 @@
   position: relative;
   margin: auto;
   width: 25%;
-  min-width: 350px;
+  min-width: 320px;
   height: 40vh;
   min-height: 360px;
   border-radius: 0 0 180px 180px;
