@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Variant, motion } from "framer-motion";
 
 import classes from "./AboutMe.module.css";
@@ -23,20 +24,18 @@ export default function AboutMe() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const [isProfileImgLoaded, setIsProfileImgLoaded] = useState(false);
+
   return (
     <section>
-      <div
-        className={classes.content}
-      >
+      <div className={classes.content}>
         <motion.div
           className={classes.textWrapper}
           transition={{ staggerChildren: 0.1 }}
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 {...textSettings}>
-            Hi there👋
-          </motion.h1>
+          <motion.h1 {...textSettings}>Hi there👋</motion.h1>
           <motion.p {...textSettings}>
             Welcome to my portfolio! My name is Gabriel and I'm a fullstack
             developer.
@@ -71,13 +70,15 @@ export default function AboutMe() {
               visible: { scale: 1, opacity: 1 },
             }}
             transition={{ duration: 0.8 }}
-
           />
           <motion.img
             variants={imageVariants}
             transition={{ duration: 0.8 }}
             src={profile}
             alt="My profile picture"
+            initial="hidden"
+            animate={isProfileImgLoaded ? "visible" : "hidden"}
+            onLoad={() => setIsProfileImgLoaded(true)}
           />
         </motion.div>
       </div>
