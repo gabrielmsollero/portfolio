@@ -1,0 +1,40 @@
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.textWrapper {
+  width: 75%;
+  padding-right: 5rem;
+}
+
+.avatarWrapper {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 25%;
+  height: 40vh;
+  min-height: 360px;
+  border-radius: 0 0 160px 160px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.avatarWrapper img {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  height: 110%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.bgCircle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #efefef;
+  z-index: 0;
+  border-radius: 50%;
+}
