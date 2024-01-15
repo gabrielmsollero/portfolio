@@ -18,6 +18,7 @@
   min-height: 360px;
   border-radius: 0 0 180px 180px;
   overflow: hidden;
+  isolation: isolate;
   justify-content: center;
 }
 
