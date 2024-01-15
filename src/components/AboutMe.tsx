@@ -7,8 +7,8 @@ export default function AboutMe() {
     <section>
       <div className={classes.content}>
         <div className={classes.textWrapper}>
-          <h1>Welcome to my portfolio!</h1>
-          <p>Hi there! My name is Gabriel and I'm a fullstack developer.</p>
+          <h1>Hi there👋</h1>
+          <p>Welcome to my portfolio! My name is Gabriel and I'm a fullstack developer.</p>
           <p>
             I am passionate about software engineering, innovation and technology in
             general. I've been working with software development since 2021, and
