@@ -3,12 +3,12 @@ import { Variant, motion } from "framer-motion";
 
 import classes from "./AboutMe.module.css";
 
-import profile from "../assets/profile.png";
+import profile from "../assets/profile.webp";
 
 export default function AboutMe() {
   type AnimationSettings = {
     variants: { hidden: Variant; visible: Variant };
-    transition: { duration: number };
+    transition?: { duration: number };
   };
 
   const textSettings: AnimationSettings = {
@@ -19,9 +19,11 @@ export default function AboutMe() {
     transition: { duration: 0.5 },
   };
 
-  const imageVariants = {
-    hidden: { opacity: 0, y: 200 },
-    visible: { opacity: 1, y: 0 },
+  const imageSettings = {
+    variants: {
+      hidden: { opacity: 0, y: 200 },
+      visible: { opacity: 1, y: 0 },
+    }
   };
 
   const [isProfileImgLoaded, setIsProfileImgLoaded] = useState(false);
@@ -72,7 +74,7 @@ export default function AboutMe() {
             transition={{ duration: 0.8 }}
           />
           <motion.img
-            variants={imageVariants}
+            {...imageSettings}
             transition={{ duration: 0.8 }}
             src={profile}
             alt="My profile picture"
