@@ -1,0 +1,15 @@
+.spacer {
+  height: auto;
+  overflow: hidden;
+}
+
+.spacer svg {
+  height: 100%;
+  width: clamp(100vw, 300%, 1280px);
+  margin-bottom: -0.5rem;
+}
+
+.flipped {
+  margin-bottom: 0;
+  transform: rotate(180deg);
+}

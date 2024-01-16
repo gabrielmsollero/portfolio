@@ -1,7 +1,7 @@
 .content {
   display: flex;
   flex-direction: row;
-  min-height: calc(100vh - 2rem - 200px); /* From padding-top & waves */
+  min-height: calc(100vh - 2rem - 120px); /* From padding-top & waves */
   max-width: 1280px;
   padding: 2rem;
   margin: auto;

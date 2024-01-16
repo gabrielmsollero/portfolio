@@ -10,9 +10,7 @@ export default function GithubIcon(props: any) {
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="1"
         fill="none"
-        fill-rule="evenodd"
       >
         <g
           id="Dribbble-Light-Preview"

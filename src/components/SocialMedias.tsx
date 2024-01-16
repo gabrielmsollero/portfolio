@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import BlueWavesSpacer from "./Spacers/BlueWavesSpacer";
+
 import GithubIcon from "./Icons/GithubIcon";
 import LinkedinIcon from "./Icons/LinkedinIcon";
 import MailIcon from "./Icons/MailIcon";
@@ -39,7 +41,7 @@ const medias = [
 export default function SocialMedias() {
   return (
     <>
-      <div className={classes.blueWavesSpacer} />
+      <BlueWavesSpacer />
       <section className={classes.socialMedia}>
         <motion.div
           className={classes.content}
@@ -91,7 +93,7 @@ export default function SocialMedias() {
           </motion.p>
         </motion.div>
       </section>
-      <div className={`${classes.blueWavesSpacer} ${classes.flipped}`} />
+      <BlueWavesSpacer flipped />
     </>
   );
 }
