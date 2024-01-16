@@ -2,13 +2,13 @@ import { useRef } from "react";
 
 import { motion, useInView } from "framer-motion";
 
-import BlueWavesSpacer from "./Spacers/BlueWavesSpacer";
+import BlueWavesSpacer from "./Utils/Spacers/BlueWavesSpacer";
 
-import GithubIcon from "./Icons/GithubIcon";
-import LinkedinIcon from "./Icons/LinkedinIcon";
-import MailIcon from "./Icons/MailIcon";
-import TelegramIcon from "./Icons/TelegramIcon";
-import WhatsappIcon from "./Icons/WhatsappIcon";
+import GithubIcon from "./Utils/Icons/GithubIcon";
+import LinkedinIcon from "./Utils/Icons/LinkedinIcon";
+import MailIcon from "./Utils/Icons/MailIcon";
+import TelegramIcon from "./Utils/Icons/TelegramIcon";
+import WhatsappIcon from "./Utils/Icons/WhatsappIcon";
 
 import classes from "./SocialMedias.module.css";
 
