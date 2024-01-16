@@ -5,27 +5,27 @@ import classes from "./AboutMe.module.css";
 
 import profile from "../assets/profile.webp";
 
+type AnimationSettings = {
+  variants: { hidden: Variant; visible: Variant };
+  transition?: { duration: number };
+};
+
+const textSettings: AnimationSettings = {
+  variants: {
+    hidden: { opacity: 0, y: -30 },
+    visible: { opacity: 1, y: 0 },
+  },
+  transition: { duration: 0.5 },
+};
+
+const imageSettings = {
+  variants: {
+    hidden: { opacity: 0, y: 200 },
+    visible: { opacity: 1, y: 0 },
+  },
+};
+
 export default function AboutMe() {
-  type AnimationSettings = {
-    variants: { hidden: Variant; visible: Variant };
-    transition?: { duration: number };
-  };
-
-  const textSettings: AnimationSettings = {
-    variants: {
-      hidden: { opacity: 0, y: -30 },
-      visible: { opacity: 1, y: 0 },
-    },
-    transition: { duration: 0.5 },
-  };
-
-  const imageSettings = {
-    variants: {
-      hidden: { opacity: 0, y: 200 },
-      visible: { opacity: 1, y: 0 },
-    },
-  };
-
   const [isProfileImgLoaded, setIsProfileImgLoaded] = useState(false);
 
   return (

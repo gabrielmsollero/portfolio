@@ -1,0 +1,14 @@
+.polaroid {
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #888;
+  background-color: #f9f9f9;
+  transition: transform ease-out 0.5s;
+}
+
+.polaroid img {
+  width: 200px;
+  border-radius: 3px;
+  object-fit: scale-down;
+  margin: 1rem 1rem 4rem;
+}

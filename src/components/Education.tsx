@@ -1,34 +1,119 @@
+import { useRef } from "react";
+import { motion, useInView, Variant } from "framer-motion";
+
+import Polaroid from "./Utils/Polaroid";
+
 import classes from "./Education.module.css";
 
 import ufuImg from "../assets/ufu.webp";
 import lamauImg from "../assets/lamau.webp";
 import emtdsImg from "../assets/emtds.webp";
+import { useEffect, useState } from "react";
+
+const polaroids = [
+  {
+    src: ufuImg,
+    alt: "Federal University of Uberlândia",
+    smallRotate: -10,
+    rotate: -10
+  },
+  {
+    src: lamauImg,
+    alt: "An electric bike",
+    smallRotate: 0,
+    rotate: 10
+  },
+  {
+    src: emtdsImg,
+    alt: "An electronic device",
+    smallRotate: 10,
+    rotate: -5
+  },
+]
+
+type AnimationSettings = {
+  variants: { hidden: Variant; visible: Variant };
+  transition?: { duration: number };
+};
+
+const textSettings: AnimationSettings = {
+  variants: {
+    hidden: { opacity: 0, y: -30 },
+    visible: { opacity: 1, y: 0 },
+  },
+  transition: { duration: 0.5 },
+};
 
 export default function Education() {
+  const [isSmall, setIsSmall] = useState(false);
+
+  useEffect(() => {
+    setIsSmall(window.innerWidth < 960);
+  }, [window.innerWidth]);
+
+  const photosWrapperRef = useRef(null);
+  const wasPhotosViewed = useInView(photosWrapperRef, {
+    once: true,
+    amount: 0.2,
+  });
+
+  const textWrapperRef = useRef(null);
+  const wasTextViewed = useInView(textWrapperRef, {
+    once: true,
+    amount: 0.2,
+  });
+
   return (
     <section id="education">
       <div className={classes.content}>
-        <div className={classes.photosWrapper}>
-          <div className={classes.photoCard}>
-            <img src={ufuImg} alt="Federal University of Uberlândia" />
-          </div>
-          <div className={classes.photoCard}>
-            <img src={lamauImg} alt="An electric bike" />
-          </div>
-          <div className={classes.photoCard}>
-            <img src={emtdsImg} alt="An electronic device" />
-          </div>
-        </div>
-        <div className={classes.textWrapper}>
-          <h1>📖Education</h1>
-          {/* Fotos logo UFU, LAMAU, Energisa - transição fade in on scroll down */}
-          <p>
+        <motion.div
+          className={classes.photosWrapper}
+          initial="hidden"
+          animate={wasPhotosViewed ? "visible" : "hidden"}
+          transition={{ staggerChildren: 1 }}
+          ref={photosWrapperRef}
+        >
+          {polaroids.map((p) => (
+            <Polaroid
+              key={p.src}
+              className={classes.photoCard}
+              src={p.src}
+              alt={p.alt}
+              variants={{
+                hidden: { opacity: 0, scale: 1.5 },
+                visible: {
+                  rotate: isSmall ? p.smallRotate : p.rotate,
+                  opacity: 1,
+                  scale: 1,
+                },
+                hoveredOrTapped: {
+                  scale: 1.5,
+                  zIndex: 4,
+                  transition: { duration: 0.001, type: 'spring' },
+                }
+              }}
+              whileHover="hoveredOrTapped"
+              whileTap="hoveredOrTapped"
+              initial="hidden"
+              animate={wasPhotosViewed ? "visible" : "hidden"}
+            />
+          ))}
+        </motion.div>
+        <motion.div
+          className={classes.textWrapper}
+          transition={{ staggerChildren: 0.1 }}
+          initial="hidden"
+          animate={wasTextViewed ? "visible" : "hidden"}
+          ref={textWrapperRef}
+        >
+          <motion.h1 {...textSettings}>📖Education</motion.h1>
+          <motion.p {...textSettings}>
             I got my <strong>Bachelor's Degree</strong> in Automation & Control
             Engineering at the Federal University of Uberlândia (UFU){" "}
             <strong>in 2023</strong>. It's been an amazing journey, graduating
             there.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p {...textSettings}>
             I've participated as the Electronics <strong>team manager</strong>{" "}
             on the project of the <strong>first electric</strong> motorcycle
             designed for racing <strong>of Latin America</strong>, at{" "}
@@ -40,8 +125,8 @@ export default function Education() {
             financing or other projects to use as reference! We sold{" "}
             <strong>raffles</strong>, we sold water bottles{" "}
             <strong>at traffic lights</strong> and we made it!
-          </p>
-          <p>
+          </motion.p>
+          <motion.p {...textSettings}>
             After finishing the motorcycle, I joined the{" "}
             <strong>Special Machines Laboratory</strong> (LAMEP) where I stayed
             until the end of graduation. There, in partnership with{" "}
@@ -49,13 +134,13 @@ export default function Education() {
             developed a portable device for detecting dynamic tampers in
             electrical energy meters on field. I contributed to it as an
             <strong>embedded software developer</strong> and R&D scholar.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p {...textSettings}>
             Also, I had a GPA of <strong>85.5/100</strong> in graduation. Even
             though I don't believe this is the only thing that defines knowledge
             and effort, I'm <strong>pretty proud of it.</strong>
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
     </section>
   );
