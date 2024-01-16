@@ -17,9 +17,10 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
-a:hover {
+
+/* a:hover {
   color: #747bff;
-}
+} */
 
 body {
   margin: 0;

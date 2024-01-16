@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 import { motion, useInView } from "framer-motion";
 
-import BlueWavesSpacer from "./Utils/Spacers/BlueWavesSpacer";
+import WavesSpacer from "./Utils/Spacers/WavesSpacer";
 
 import GithubIcon from "./Utils/Icons/GithubIcon";
 import LinkedinIcon from "./Utils/Icons/LinkedinIcon";
@@ -52,7 +52,7 @@ export default function SocialMedias() {
 
   return (
     <>
-      <BlueWavesSpacer />
+      <WavesSpacer colors={["#247dc7", "#3796d9", "#4eb0ea", "#69cafa"]}/>
       <section className={classes.socialMedia}>
         <motion.div
           className={classes.content}
@@ -113,7 +113,7 @@ export default function SocialMedias() {
           </motion.p>
         </motion.div>
       </section>
-      <BlueWavesSpacer flipped />
+      <WavesSpacer colors={["#247dc7", "#3796d9", "#4eb0ea", "#69cafa"]} flipped/>
     </>
   );
 }
