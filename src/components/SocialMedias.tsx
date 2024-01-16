@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+
+import { motion, useInView } from "framer-motion";
 
 import BlueWavesSpacer from "./Spacers/BlueWavesSpacer";
 
@@ -39,6 +41,15 @@ const medias = [
 ];
 
 export default function SocialMedias() {
+  const titleRef = useRef(null);
+  const wasTitleViewed = useInView(titleRef, { once: true, amount: "all" })
+
+  const ulRef = useRef(null);
+  const wasUlViewed = useInView(ulRef, { once: true, amount: 0.5 })
+
+  const footerRef = useRef(null);
+  const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" })
+
   return (
     <>
       <BlueWavesSpacer />
@@ -54,14 +65,17 @@ export default function SocialMedias() {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5 }}
+            animate={wasTitleViewed ? "visible" : "hidden"}
+            ref={titleRef}
           >
             Check out my social medias!
           </motion.h2>
           <motion.ul
             initial="hidden"
-            animate="visible"
+            animate={wasUlViewed ? "visible" : "hidden"}
             transition={{ staggerChildren: 0.1 }}
             className={classes.mediasWrapper}
+            ref={ulRef}
           >
             {medias.map((media) => (
               <motion.li
@@ -84,10 +98,16 @@ export default function SocialMedias() {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5 }}
+            animate={wasFooterViewed ? "visible" : "hidden"}
+            ref={footerRef}
           >
             Have a proposal? Found a bug on this page? You don't have to leave
-            it to let me know!
-            {" "}<a className={classes.mailBtn} href="mailto:sollero.gms@gmail.com" target="_blank">
+            it to let me know!{" "}
+            <a
+              className={classes.mailBtn}
+              href="mailto:sollero.gms@gmail.com"
+              target="_blank"
+            >
               Mail me
             </a>
           </motion.p>
