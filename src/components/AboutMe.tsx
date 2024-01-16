@@ -58,7 +58,7 @@ export default function AboutMe() {
           </motion.p>
           <motion.p {...textSettings}>
             Hey, since you've read this far, <strong>scroll down</strong> and
-            you'll get to know a little more about my <a href="">education</a>{" "}
+            you'll get to know a little more about my <a href="#education">education</a>{" "}
             and <a href="">professional experiences</a>!
           </motion.p>
         </motion.div>

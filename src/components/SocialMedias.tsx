@@ -108,7 +108,7 @@ export default function SocialMedias() {
               href="mailto:sollero.gms@gmail.com"
               target="_blank"
             >
-              Mail me
+              Say hello
             </a>
           </motion.p>
         </motion.div>
