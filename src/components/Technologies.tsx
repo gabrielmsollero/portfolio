@@ -4,21 +4,21 @@ import { motion, useInView } from "framer-motion";
 import WavesSpacer from "./Utils/Spacers/WavesSpacer";
 import Carousel from "./Utils/Carousel";
 
-import classes from "./TechnologiesCarousel.module.css"
+import classes from "./Technologies.module.css";
 
 export default function TechnologiesCarousel() {
   const titleRef = useRef(null);
-  const wasTitleViewed = useInView(titleRef, { once: true, amount: "all" })
+  const wasTitleViewed = useInView(titleRef, { once: true, amount: "all" });
 
   const carouselRef = useRef(null);
-  const wasCarouselViewed = useInView(carouselRef, { once: true, amount: 0.5 })
+  const wasCarouselViewed = useInView(carouselRef, { once: true, amount: 0.5 });
 
   const footerRef = useRef(null);
-  const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" })
+  const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" });
 
   return (
     <>
-      <WavesSpacer colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]}/>
+      <WavesSpacer colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]} />
       <section className={classes.techCarousel}>
         <motion.div
           className={classes.content}
@@ -36,7 +36,11 @@ export default function TechnologiesCarousel() {
           >
             Technologies I've worked with
           </motion.h2>
-          <Carousel ref={carouselRef} />
+          <Carousel
+            ref={carouselRef}
+            initial="hidden"
+            animate={wasCarouselViewed ? "visible" : "hidden"}
+          />
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 30 },
@@ -50,7 +54,10 @@ export default function TechnologiesCarousel() {
           </motion.p>
         </motion.div>
       </section>
-      <WavesSpacer colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]} flipped />
+      <WavesSpacer
+        colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]}
+        flipped
+      />
     </>
   );
 }
