@@ -1,84 +1,34 @@
-import { ReactNode } from "react";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
-type Tech = {
-  name: string,
-  imgSrc: string,
-  hoverNode: ReactNode,
-}
+import classes from "./Carousel.module.css";
 
-const techs: Tech[] = [
-  {
-    name: 'flask',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'react',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'docker',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'bootstrap',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'jquery',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'electron',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'aws',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'node',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'mongodb',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'mysql',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'nore-red',
-    imgSrc: '',
-    hoverNode: <></>
-  },
-  {
-    name: 'selenium',
-    imgSrc: '',
-    hoverNode: <></>
-  }
-]
+import techs from "./techs";
 
-type Props = any
+export default function Carousel() {
+  const carouselRef = useRef(null);
+  const wasCarouselViewed = useInView(carouselRef, { once: true, amount: "some" });
 
-export default function Carousel({}: Props) {
   return (
-    <ul>
+    <motion.ul
+      className={classes.carousel}
+      initial="hidden"
+      animate={wasCarouselViewed ? "visible" : "hidden"}
+      ref={carouselRef}
+    >
       {techs.map((tech) => (
-        <li key={tech.name}>
-          
-        </li>
+        <motion.li
+          key={tech.name}
+          className={classes.carouselItem}
+          variants={{
+            hidden: { x: -500 },
+            visible: { x: 0 }
+          }}
+          transition={{duration: 2}}
+        >
+          <img src={tech.imgSrc} alt={tech.name} draggable={false}/>
+        </motion.li>
       ))}
-    </ul>
+    </motion.ul>
   );
 }

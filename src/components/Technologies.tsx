@@ -6,12 +6,9 @@ import Carousel from "./Utils/Carousel";
 
 import classes from "./Technologies.module.css";
 
-export default function TechnologiesCarousel() {
+export default function Technologies() {
   const titleRef = useRef(null);
   const wasTitleViewed = useInView(titleRef, { once: true, amount: "all" });
-
-  const carouselRef = useRef(null);
-  const wasCarouselViewed = useInView(carouselRef, { once: true, amount: 0.5 });
 
   const footerRef = useRef(null);
   const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" });
@@ -36,11 +33,7 @@ export default function TechnologiesCarousel() {
           >
             Technologies I've worked with
           </motion.h2>
-          <Carousel
-            ref={carouselRef}
-            initial="hidden"
-            animate={wasCarouselViewed ? "visible" : "hidden"}
-          />
+          <Carousel />
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 30 },

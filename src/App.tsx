@@ -4,7 +4,7 @@ import OtherProjects from "./components/OtherProjects";
 import ProfessionalExperience from "./components/ProfessionalExperience";
 import Responsiveness from "./components/Responsiveness";
 import SocialMedias from "./components/SocialMedias";
-import TechnologiesCarousel from "./components/TechnologiesCarousel";
+import Technologies from "./components/Technologies";
 
 import "./App.css";
 
@@ -14,7 +14,7 @@ function App() {
       <AboutMe />
       <SocialMedias />
       <Education />
-      <TechnologiesCarousel />
+      <Technologies />
       <ProfessionalExperience />
       <Responsiveness />
       <OtherProjects />
