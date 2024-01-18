@@ -44,12 +44,14 @@ export default function AboutMe() {
           </motion.p>
           <motion.p {...textSettings}>
             I am passionate about software engineering, innovation and
-            technology in general. I've been working with software development{" "}
-            <strong>since 2021</strong>, and went through frontend, backend and
-            fullstack positions (I'll also do some devops if you need too), and
-            I'm pretty happy working with any of these. In the end of the day,
-            what I really like is to see softwares <strong>growing up</strong>{" "}
-            and <strong>working smoothly</strong>!
+            technology in general. I started my{" "}
+            <strong>graduation in 2018</strong>, and have been programming since
+            then. Entered the software development{" "}
+            <strong>market in 2021</strong>, and been through frontend, backend
+            and fullstack positions (I'll also do some devops if you need too),
+            and I'm pretty happy working with any of these. In the end of the
+            day, what I really like is to see softwares{" "}
+            <strong>growing up</strong> and <strong>working smoothly</strong>!
           </motion.p>
           <motion.p {...textSettings}>
             I like motorcycles, martial arts and beer as well. Feel free to
@@ -58,8 +60,9 @@ export default function AboutMe() {
           </motion.p>
           <motion.p {...textSettings}>
             Hey, since you've read this far, <strong>scroll down</strong> and
-            you'll get to know a little more about my <a href="#education">education</a>{" "}
-            and <a href="">professional experiences</a>!
+            you'll get to know a little more about my{" "}
+            <a href="#education">education</a> and{" "}
+            <a href="">professional experiences</a>!
           </motion.p>
         </motion.div>
         <motion.div

@@ -15,21 +15,21 @@ const polaroids = [
     src: ufuImg,
     alt: "Federal University of Uberlândia",
     smallRotate: -10,
-    rotate: -10
+    rotate: -10,
   },
   {
     src: lamauImg,
     alt: "An electric bike",
     smallRotate: 0,
-    rotate: 10
+    rotate: 10,
   },
   {
     src: emtdsImg,
     alt: "An electronic device",
     smallRotate: 10,
-    rotate: -5
+    rotate: -5,
   },
-]
+];
 
 type AnimationSettings = {
   variants: { hidden: Variant; visible: Variant };
@@ -89,8 +89,8 @@ export default function Education() {
                 hoveredOrTapped: {
                   scale: 1.5,
                   zIndex: 4,
-                  transition: { duration: 0.001, type: 'spring' },
-                }
+                  transition: { duration: 0.001, type: "spring" },
+                },
               }}
               whileHover="hoveredOrTapped"
               whileTap="hoveredOrTapped"
@@ -115,16 +115,16 @@ export default function Education() {
           </motion.p>
           <motion.p {...textSettings}>
             I've participated as the Electronics <strong>team manager</strong>{" "}
-            on the project of the <strong>first electric</strong> motorcycle
+            on the project of the <strong>first electric motorcycle</strong>{" "}
             designed for racing <strong>of Latin America</strong>, at{" "}
             <a href="https://www.linkedin.com/company/lamau-ufu">LAMAU</a>. We
             were competitors in the{" "}
-            <a href="https://www.motostudent.com/">MotoStudent®</a>
-            competition, edition VI. We were 2nd between the rookie teams and
-            8th overall, even though we were all undergraduates with no
-            financing or other projects to use as reference! We sold{" "}
-            <strong>raffles</strong>, we sold water bottles{" "}
-            <strong>at traffic lights</strong> and we made it!
+            <a href="https://www.motostudent.com/">MotoStudent®</a> competition,
+            edition VI. We were 2nd between the rookie teams and 8th overall,
+            even though we were all undergraduates with no financing or other
+            projects to use as reference! We sold <strong>raffles</strong>, we
+            sold water bottles <strong>at traffic lights</strong> and we made
+            it!
           </motion.p>
           <motion.p {...textSettings}>
             After finishing the motorcycle, I joined the{" "}
@@ -132,7 +132,7 @@ export default function Education() {
             until the end of graduation. There, in partnership with{" "}
             <a href="https://www.grupoenergisa.com.br/">Energisa</a>, we
             developed a portable device for detecting dynamic tampers in
-            electrical energy meters on field. I contributed to it as an
+            electrical energy meters on field. I contributed to it as an{" "}
             <strong>embedded software developer</strong> and R&D scholar.
           </motion.p>
           <motion.p {...textSettings}>
