@@ -1,0 +1,40 @@
+.responsiveness {
+  color: #F9F9F9;
+  background-color: #de7b9c;
+  margin: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  max-width: 1280px;
+  padding: 1rem 2rem;
+  margin: auto;
+
+  & h2 {
+   margin: 0 auto; 
+  }
+}
+
+.qrCodeWrapper {
+  padding: 0 2rem;
+  width: 8rem;
+  aspect-ratio: 1;
+}
+
+@media (max-width: 720px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0.5em;
+  }
+
+  .qrCodeWrapper {
+    padding-top: 0rem;
+  }
+}
