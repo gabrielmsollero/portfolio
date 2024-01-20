@@ -17,7 +17,7 @@ export default function Timeline({ items }: Props) {
   const ref = useRef(null);
   const wasTimelineViewed = useInView(ref, {
     once: true,
-    amount: 0.4,
+    amount: 0.3,
   });
 
   return (
