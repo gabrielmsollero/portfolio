@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-import WavesSpacer from "./Utils/Spacers/WavesSpacer";
+import WaveSpacedSection from "./Utils/WaveSpacedSection";
 import Carousel from "./Utils/Carousel";
 
 import classes from "./Technologies.module.css";
@@ -14,10 +14,8 @@ export default function Technologies() {
   const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" });
 
   return (
-    <>
-      <WavesSpacer colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]} />
-      <section className={classes.techCarousel}>
-        <motion.div
+    <WaveSpacedSection colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]}>
+      <motion.div
           className={classes.content}
           initial="hidden"
           animate="visible"
@@ -46,11 +44,6 @@ export default function Technologies() {
             Hover over them to see the projects where they were used!
           </motion.p>
         </motion.div>
-      </section>
-      <WavesSpacer
-        colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]}
-        flipped
-      />
-    </>
+    </WaveSpacedSection>
   );
 }
