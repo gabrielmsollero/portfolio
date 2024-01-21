@@ -1,6 +1,6 @@
 import AboutMe from "./components/AboutMe";
 import Education from "./components/Education";
-import OtherProjects from "./components/OtherProjects";
+// import OtherProjects from "./components/OtherProjects";
 import ProfessionalExperience from "./components/ProfessionalExperience";
 import Responsiveness from "./components/Responsiveness";
 import SocialMedias from "./components/SocialMedias";
@@ -17,7 +17,7 @@ function App() {
       <Technologies />
       <ProfessionalExperience />
       <Responsiveness />
-      <OtherProjects />
+      {/* <OtherProjects /> */}
     </>
   );
 }

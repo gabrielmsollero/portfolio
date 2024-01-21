@@ -70,7 +70,7 @@ export default function Responsiveness() {
           </motion.div>
         </div>
       </section>
-      <WavesSpacer colors={["#bf3564", "#ca4e77", "#d46589", "#de7b9c"]} flipped />
+      {/* <WavesSpacer colors={["#bf3564", "#ca4e77", "#d46589", "#de7b9c"]} flipped /> */}
     </>
   );
 }
