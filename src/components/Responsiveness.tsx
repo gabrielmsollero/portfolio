@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-import WavesSpacer from "./Utils/Spacers/WavesSpacer";
+import WaveSpacedSection from "./Utils/WaveSpacedSection";
 import QRCode from "react-qr-code";
 
 import classes from "./Responsiveness.module.css";
@@ -20,57 +20,53 @@ export default function Responsiveness() {
   });
 
   return (
-    <>
-      <WavesSpacer colors={["#bf3564", "#ca4e77", "#d46589", "#de7b9c"]} />
-      <section className={classes.responsiveness}>
-        <div className={classes.content}>
-          <motion.div
-            className={classes.textWrapper}
-            animate={wasTextViewed ? "visible" : "hidden"}
-            ref={textRef}
-            transition={{ staggerChildren: 0.2 }}
-          >
-            <motion.h2
-              variants={{
-                hidden: { opacity: 0, y: -30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.5 }}
-            >
-              Let's talk about responsiveness?
-            </motion.h2>
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: -30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.5 }}
-            >
-              Did you enjoy the portfolio? Scan the QR code and check it out with your
-              phone!
-            </motion.p>
-          </motion.div>
-          <motion.div
-            className={classes.qrCodeWrapper}
+    <WaveSpacedSection colors={["#bf3564", "#ca4e77", "#d46589", "#de7b9c"]} hasBottomSpacer={false}>
+      <div className={classes.content}>
+        <motion.div
+          className={classes.textWrapper}
+          animate={wasTextViewed ? "visible" : "hidden"}
+          ref={textRef}
+          transition={{ staggerChildren: 0.2 }}
+        >
+          <motion.h2
             variants={{
-              hidden: { scale: 0 },
-              visible: { scale: 1 },
+              hidden: { opacity: 0, y: -30 },
+              visible: { opacity: 1, y: 0 },
             }}
-            ref={qrCodeRef}
-            transition={{ duration: 0.2, type: "spring", stiffness: 80 }}
-            initial="hidden"
-            animate={wasQrCodeViewed ? "visible" : "hidden"}
+            transition={{ duration: 0.5 }}
           >
-            <QRCode
-              value={window.location.href}
-              bgColor="#de7b9c"
-              fgColor="#f9f9f9"
-              style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-            />
-          </motion.div>
-        </div>
-      </section>
-      {/* <WavesSpacer colors={["#bf3564", "#ca4e77", "#d46589", "#de7b9c"]} flipped /> */}
-    </>
+            Let's talk about responsiveness?
+          </motion.h2>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: -30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            Did you enjoy the portfolio? Scan the QR code and check it out with
+            your phone!
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className={classes.qrCodeWrapper}
+          variants={{
+            hidden: { scale: 0 },
+            visible: { scale: 1 },
+          }}
+          ref={qrCodeRef}
+          transition={{ duration: 0.2, type: "spring", stiffness: 80 }}
+          initial="hidden"
+          animate={wasQrCodeViewed ? "visible" : "hidden"}
+        >
+          <QRCode
+            value={window.location.href}
+            bgColor="#de7b9c"
+            fgColor="#f9f9f9"
+            style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+          />
+        </motion.div>
+      </div>
+    </WaveSpacedSection>
   );
 }
