@@ -31,6 +31,12 @@ const polaroids = [
   },
 ];
 
+const hoveredOrTappedVariant = {
+  scale: 1.5,
+  zIndex: 4,
+  transition: { duration: 0.001, type: "spring" },
+}
+
 type AnimationSettings = {
   variants: { hidden: Variant; visible: Variant };
   transition?: { duration: number };
@@ -70,7 +76,7 @@ export default function Education() {
           className={classes.photosWrapper}
           initial="hidden"
           animate={wasPhotosViewed ? "visible" : "hidden"}
-          transition={{ staggerChildren: 1 }}
+          transition={{ staggerChildren: 0.3 }}
           ref={photosWrapperRef}
         >
           {polaroids.map((p) => (
@@ -86,16 +92,9 @@ export default function Education() {
                   opacity: 1,
                   scale: 1,
                 },
-                hoveredOrTapped: {
-                  scale: 1.5,
-                  zIndex: 4,
-                  transition: { duration: 0.001, type: "spring" },
-                },
               }}
-              whileHover="hoveredOrTapped"
-              whileTap="hoveredOrTapped"
-              initial="hidden"
-              animate={wasPhotosViewed ? "visible" : "hidden"}
+              whileHover={hoveredOrTappedVariant}
+              whileTapped={hoveredOrTappedVariant}
             />
           ))}
         </motion.div>
