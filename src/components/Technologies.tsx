@@ -14,7 +14,7 @@ export default function Technologies() {
   const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" });
 
   return (
-    <WaveSpacedSection colors={["#109884", "#17ab93", "#1fbea3", "#28d1b2"]}>
+    <WaveSpacedSection colors={["var(--wave-green-1)", "var(--wave-green-2)", "var(--wave-green-3)", "var(--wave-green-4)"]}>
       <motion.div
           className={classes.content}
           initial="hidden"

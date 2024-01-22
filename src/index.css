@@ -13,6 +13,21 @@ html {
 
   --dark-blue: #247dc7;
 
+  --wave-blue-1: #247dc7;
+  --wave-blue-2: #3796d9;
+  --wave-blue-3: #4eb0ea;
+  --wave-blue-4: #69cafa;
+
+  --wave-green-1: #109884;
+  --wave-green-2: #17ab93;
+  --wave-green-3: #1fbea3;
+  --wave-green-4: #28d1b2;
+
+  --wave-pink-1: #bf3564;
+  --wave-pink-2: #ca4e77;
+  --wave-pink-3: #d46589;
+  --wave-pink-4: #de7b9c;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

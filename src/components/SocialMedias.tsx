@@ -58,7 +58,7 @@ export default function SocialMedias() {
 
   return (
     <WaveSpacedSection
-      colors={["#247dc7", "#3796d9", "#4eb0ea", "#69cafa"]}
+      colors={["var(--wave-blue-1)", "var(--wave-blue-2)", "var(--wave-blue-3)", "var(--wave-blue-4)"]}
     >
       <motion.div
         className={classes.content}

@@ -20,7 +20,7 @@ export default function Responsiveness() {
   });
 
   return (
-    <WaveSpacedSection colors={["#bf3564", "#ca4e77", "#d46589", "#de7b9c"]}>
+    <WaveSpacedSection colors={["var(--wave-pink-1)", "var(--wave-pink-2)", "var(--wave-pink-3)", "var(--wave-pink-4)"]} hasBottomSpacer={false}>
       <div className={classes.content}>
         <motion.div
           className={classes.textWrapper}
@@ -61,8 +61,8 @@ export default function Responsiveness() {
         >
           <QRCode
             value={window.location.href}
-            bgColor="#de7b9c"
-            fgColor="#f9f9f9"
+            bgColor="var(--wave-pink-4)"
+            fgColor="var(--white)"
             style={{ height: "auto", maxWidth: "100%", width: "100%" }}
           />
         </motion.div>
