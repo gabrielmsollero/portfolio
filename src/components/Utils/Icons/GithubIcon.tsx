@@ -1,4 +1,6 @@
-export default function GithubIcon(props: any) {
+
+
+export default function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
     width="24"

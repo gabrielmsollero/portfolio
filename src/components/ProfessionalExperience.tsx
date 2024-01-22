@@ -91,7 +91,6 @@ const timeLineItems: TimelineItem[] = [
 export default function ProfessionalExprience() {
   return (
     <section id="professional-experiences">
-      {/* Linha do tempo fade in tipo intro do fireship.io */}
       <div className={classes.content}>
         <h1>Professional Experiences 💻</h1>
         <Timeline items={timeLineItems} />

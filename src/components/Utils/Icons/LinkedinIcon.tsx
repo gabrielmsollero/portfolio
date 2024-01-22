@@ -1,4 +1,4 @@
-export default function LinkedinIcon(props: any) {
+export default function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

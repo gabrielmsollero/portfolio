@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useInView, Variant } from "framer-motion";
+import { motion, useInView, HTMLMotionProps } from "framer-motion";
 
 import Polaroid from "./Utils/Polaroid";
 
@@ -37,12 +37,7 @@ const hoveredOrTappedVariant = {
   transition: { duration: 0.001, type: "spring" },
 }
 
-type AnimationSettings = {
-  variants: { hidden: Variant; visible: Variant };
-  transition?: { duration: number };
-};
-
-const textSettings: AnimationSettings = {
+const textSettings: HTMLMotionProps<"p" | "h1"> = {
   variants: {
     hidden: { opacity: 0, y: -30 },
     visible: { opacity: 1, y: 0 },
@@ -57,13 +52,13 @@ export default function Education() {
     setIsSmall(window.innerWidth < 960);
   }, [window.innerWidth]);
 
-  const photosWrapperRef = useRef(null);
+  const photosWrapperRef = useRef<HTMLDivElement>(null);
   const wasPhotosViewed = useInView(photosWrapperRef, {
     once: true,
     amount: 0.2,
   });
 
-  const textWrapperRef = useRef(null);
+  const textWrapperRef = useRef<HTMLDivElement>(null);
   const wasTextViewed = useInView(textWrapperRef, {
     once: true,
     amount: 0.2,
@@ -94,7 +89,7 @@ export default function Education() {
                 },
               }}
               whileHover={hoveredOrTappedVariant}
-              whileTapped={hoveredOrTappedVariant}
+              whileTap={hoveredOrTappedVariant}
             />
           ))}
         </motion.div>

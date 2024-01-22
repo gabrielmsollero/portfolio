@@ -1,4 +1,4 @@
-export default function MailIcon(props: any) {
+export default function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
