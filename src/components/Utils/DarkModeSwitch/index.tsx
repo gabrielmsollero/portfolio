@@ -18,12 +18,11 @@ export default function DarkModeSwitch() {
     <button
       onClick={() => setIsDarkModeOn((prevMode) => !prevMode)}
       style={{
-        color: "var(--text-color)",
-        backgroundColor: "transparent",
+        borderRadius: "50%",
         border: "none",
         outline: "none",
-        padding: "1rem",
-        height: "1.5rem"
+        width: "40px",
+        height: "40px",
       }}
     >
       {isDarkModeOn ? <MoonIcon /> : <SunIcon />}
