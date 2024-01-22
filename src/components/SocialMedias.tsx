@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 
 import { motion, useInView } from "framer-motion";
 
@@ -12,7 +12,13 @@ import WhatsappIcon from "./Utils/Icons/WhatsappIcon";
 
 import classes from "./SocialMedias.module.css";
 
-const medias = [
+type Media = {
+  id: string,
+  href: string,
+  icon: ReactNode
+}
+
+const medias: Media[] = [
   {
     id: "linkedin",
     href: "https://www.linkedin.com/in/gabriel-medeiros-sollero-328651163/",
@@ -41,13 +47,13 @@ const medias = [
 ];
 
 export default function SocialMedias() {
-  const titleRef = useRef(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const wasTitleViewed = useInView(titleRef, { once: true, amount: "all" });
 
-  const ulRef = useRef(null);
+  const ulRef = useRef<HTMLUListElement>(null);
   const wasUlViewed = useInView(ulRef, { once: true, amount: 0.5 });
 
-  const footerRef = useRef(null);
+  const footerRef = useRef<HTMLParagraphElement>(null);
   const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" });
 
   return (

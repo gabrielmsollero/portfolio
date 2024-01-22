@@ -7,10 +7,10 @@ import Carousel from "./Utils/Carousel";
 import classes from "./Technologies.module.css";
 
 export default function Technologies() {
-  const titleRef = useRef(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const wasTitleViewed = useInView(titleRef, { once: true, amount: "all" });
 
-  const footerRef = useRef(null);
+  const footerRef = useRef<HTMLParagraphElement>(null);
   const wasFooterViewed = useInView(footerRef, { once: true, amount: "all" });
 
   return (

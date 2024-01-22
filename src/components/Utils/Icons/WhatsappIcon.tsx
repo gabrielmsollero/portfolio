@@ -1,4 +1,4 @@
-export default function WhatsappIcon(props: any) {
+export default function WhatsappIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

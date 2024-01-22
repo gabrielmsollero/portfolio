@@ -1,16 +1,11 @@
 import { useState } from "react";
-import { Variant, motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
 import classes from "./AboutMe.module.css";
 
 import profile from "../assets/profile.webp";
 
-type AnimationSettings = {
-  variants: { hidden: Variant; visible: Variant };
-  transition?: { duration: number };
-};
-
-const textSettings: AnimationSettings = {
+const textSettings: HTMLMotionProps<"p" | "h1"> = {
   variants: {
     hidden: { opacity: 0, y: -30 },
     visible: { opacity: 1, y: 0 },
@@ -18,7 +13,7 @@ const textSettings: AnimationSettings = {
   transition: { duration: 0.5 },
 };
 
-const imageSettings = {
+const imageSettings: HTMLMotionProps<"img"> = {
   variants: {
     hidden: { opacity: 0, y: 200 },
     visible: { opacity: 1, y: 0 },

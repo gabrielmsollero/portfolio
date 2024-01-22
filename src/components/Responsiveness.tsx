@@ -7,13 +7,13 @@ import QRCode from "react-qr-code";
 import classes from "./Responsiveness.module.css";
 
 export default function Responsiveness() {
-  const textRef = useRef(null);
+  const textRef = useRef<HTMLDivElement>(null);
   const wasTextViewed = useInView(textRef, {
     once: true,
     amount: 0.3,
   });
 
-  const qrCodeRef = useRef(null);
+  const qrCodeRef = useRef<HTMLDivElement>(null);
   const wasQrCodeViewed = useInView(qrCodeRef, {
     once: true,
     amount: 0.3,

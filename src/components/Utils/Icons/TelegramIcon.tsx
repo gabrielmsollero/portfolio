@@ -1,4 +1,4 @@
-export default function TelegramIcon(props: any) {
+export default function TelegramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
