@@ -50,7 +50,7 @@
 .photosWrapper .photoCard {
   position: absolute;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(black, 0.8);
+  box-shadow: 5px 5px 10px var(--box-shadow-color);
   background-color: var(--white);
   transition: transform ease-out 0.5s;
 
