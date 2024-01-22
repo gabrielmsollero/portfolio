@@ -1,5 +1,6 @@
 import RedirectIcon from "./Utils/Icons/RedirectIcon";
-import Timeline, { TimelineItem } from "./Utils/Timeline";
+import Timeline from "./Utils/Timeline";
+import { TimelineItemType } from "./Utils/Timeline/TimelineItem";
 
 import altaLogo from "../assets/alta.webp";
 import electricfishLogo from "../assets/electricfish.webp";
@@ -7,7 +8,7 @@ import kyrosLogo from "../assets/kyros.webp";
 
 import classes from "./ProfessionalExperience.module.css";
 
-const timeLineItems: TimelineItem[] = [
+const timeLineItems: TimelineItemType[] = [
   {
     imageSrc: electricfishLogo,
     dateText: "Dec 21 - Today",
