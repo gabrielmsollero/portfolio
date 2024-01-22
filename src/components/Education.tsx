@@ -50,7 +50,7 @@ export default function Education() {
 
   useEffect(() => {
     setIsSmall(window.innerWidth < 960);
-  }, [window.innerWidth]);
+  }, []);
 
   const photosWrapperRef = useRef<HTMLDivElement>(null);
   const wasPhotosViewed = useInView(photosWrapperRef, {
