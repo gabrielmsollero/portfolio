@@ -1,5 +1,6 @@
 import AboutMe from "./components/AboutMe";
 import Education from "./components/Education";
+import Header from "./components/Header";
 import OtherProjects from "./components/OtherProjects";
 import ProfessionalExperience from "./components/ProfessionalExperience";
 import Responsiveness from "./components/Responsiveness";
@@ -11,6 +12,7 @@ import "./App.css";
 function App() {
   return (
     <>
+      <Header />
       <AboutMe />
       <SocialMedias />
       <Education />
