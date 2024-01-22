@@ -3,12 +3,22 @@ html {
 }
 
 :root {
+  --white: #ffffff;
+  --light-gray: #f0f0f0;
+  --gray: #888888;
+  --dark-gray: #213547;
+
+  --purple: #747bff;
+  --dark-purple: #646cff;
+
+  --dark-blue: #247dc7;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color: #213547;
-  background-color: #ffffff;
+  color: var(--dark-gray);
+  background-color: var(--white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,13 +28,13 @@ html {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--dark-purple);
   text-decoration: inherit;
 }
 
-/* a:hover {
-  color: #747bff;
-} */
+a:hover {
+  color: var(--purple);
+}
 
 body {
   margin: 0;

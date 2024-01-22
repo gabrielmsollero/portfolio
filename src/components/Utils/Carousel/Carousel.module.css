@@ -7,44 +7,21 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-}
 
-.carousel li {
-  width: clamp(8vw, calc((100% - 4rem) / 5), 16vh);
-  /* max-height: 20vh; */
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #f9f9f9;
-  flex-shrink: 0;
-  padding: max(1rem, 30px);
-  overflow: hidden;
-}
+  & li {
+    width: clamp(8vw, calc((100% - 4rem) / 5), 16vh);
+    /* max-height: 20vh; */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--white);
+    flex-shrink: 0;
+    padding: max(1rem, 30px);
+    overflow: hidden;
+  }
 
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(255, 255, 255, 0.3);
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
