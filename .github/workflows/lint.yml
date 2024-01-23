@@ -1,0 +1,16 @@
+---
+name: Lint
+
+on:
+  push:
+    branches-ignore: production
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+    
+      - name: Call npm lint
+        run: npm run lint
