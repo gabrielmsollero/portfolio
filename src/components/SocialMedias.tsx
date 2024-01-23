@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode, useContext, useRef } from "react";
 
 import { motion, useInView } from "framer-motion";
 
@@ -10,13 +10,15 @@ import MailIcon from "./Utils/Icons/MailIcon";
 import TelegramIcon from "./Utils/Icons/TelegramIcon";
 import WhatsappIcon from "./Utils/Icons/WhatsappIcon";
 
+import { LangContext } from "../store/lang-context";
+
 import classes from "./SocialMedias.module.css";
 
 type Media = {
-  id: string,
-  href: string,
-  icon: ReactNode
-}
+  id: string;
+  href: string;
+  icon: ReactNode;
+};
 
 const medias: Media[] = [
   {
@@ -47,6 +49,8 @@ const medias: Media[] = [
 ];
 
 export default function SocialMedias() {
+  const ctx = useContext(LangContext);
+
   const titleRef = useRef<HTMLHeadingElement>(null);
   const wasTitleViewed = useInView(titleRef, { once: true, amount: "all" });
 
@@ -58,7 +62,12 @@ export default function SocialMedias() {
 
   return (
     <WaveSpacedSection
-      colors={["var(--wave-blue-1)", "var(--wave-blue-2)", "var(--wave-blue-3)", "var(--wave-blue-4)"]}
+      colors={[
+        "var(--wave-blue-1)",
+        "var(--wave-blue-2)",
+        "var(--wave-blue-3)",
+        "var(--wave-blue-4)",
+      ]}
     >
       <motion.div
         className={classes.content}
@@ -74,7 +83,11 @@ export default function SocialMedias() {
           animate={wasTitleViewed ? "visible" : "hidden"}
           ref={titleRef}
         >
-          Check out my social medias!
+          {ctx!.lang === "pt" ? (
+            <>Confira minhas redes sociais!</>
+          ) : (
+            <>Check out my social medias!</>
+          )}
         </motion.h2>
         <motion.ul
           initial="hidden"
@@ -107,15 +120,31 @@ export default function SocialMedias() {
           animate={wasFooterViewed ? "visible" : "hidden"}
           ref={footerRef}
         >
-          Have a proposal? Found a bug on this page? You don't have to leave it
-          to let me know!{" "}
-          <a
-            className={classes.mailBtn}
-            href="mailto:sollero.gms@gmail.com"
-            target="_blank"
-          >
-            Say&nbsp;hello
-          </a>
+          {ctx!.lang === "pt" ? (
+            <>
+              Possui uma proposta? Encontrou um bug nessa página? Não precisa
+              sair dela para me avisar!{" "}
+              <a
+                className={classes.mailBtn}
+                href="mailto:sollero.gms@gmail.com"
+                target="_blank"
+              >
+                Diga&nbsp;olá
+              </a>
+            </>
+          ) : (
+            <>
+              Have a proposal? Found a bug on this page? You don't have to leave
+              it to let me know!{" "}
+              <a
+                className={classes.mailBtn}
+                href="mailto:sollero.gms@gmail.com"
+                target="_blank"
+              >
+                Say&nbsp;hello
+              </a>
+            </>
+          )}
         </motion.p>
       </motion.div>
     </WaveSpacedSection>
