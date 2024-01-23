@@ -1,12 +1,16 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 import WaveSpacedSection from "./Utils/WaveSpacedSection";
 import QRCode from "react-qr-code";
 
+import { LangContext } from "../store/lang-context";
+
 import classes from "./Responsiveness.module.css";
 
 export default function Responsiveness() {
+  const ctx = useContext(LangContext);
+
   const textRef = useRef<HTMLDivElement>(null);
   const wasTextViewed = useInView(textRef, {
     once: true,
@@ -20,7 +24,15 @@ export default function Responsiveness() {
   });
 
   return (
-    <WaveSpacedSection colors={["var(--wave-pink-1)", "var(--wave-pink-2)", "var(--wave-pink-3)", "var(--wave-pink-4)"]} hasBottomSpacer={false}>
+    <WaveSpacedSection
+      colors={[
+        "var(--wave-pink-1)",
+        "var(--wave-pink-2)",
+        "var(--wave-pink-3)",
+        "var(--wave-pink-4)",
+      ]}
+      hasBottomSpacer={false}
+    >
       <div className={classes.content}>
         <motion.div
           className={classes.textWrapper}
@@ -35,7 +47,9 @@ export default function Responsiveness() {
             }}
             transition={{ duration: 0.5 }}
           >
-            Let's talk about responsiveness?
+            {ctx!.lang === "pt"
+              ? "Vamos falar de responsividade?"
+              : "Let's talk about responsiveness?"}
           </motion.h2>
           <motion.p
             variants={{
@@ -44,8 +58,9 @@ export default function Responsiveness() {
             }}
             transition={{ duration: 0.5 }}
           >
-            Did you enjoy the portfolio? Scan the QR code and check it out with
-            your phone!
+            {ctx!.lang === "pt"
+              ? "Gostou do portfolio? Escaneie o QR code e confira-o com seu celular!"
+              : "Did you enjoy the portfolio? Scan the QR code and check it out with your phone!"}
           </motion.p>
         </motion.div>
         <motion.div
