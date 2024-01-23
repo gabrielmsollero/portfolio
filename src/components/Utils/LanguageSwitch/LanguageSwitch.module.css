@@ -1,0 +1,64 @@
+.background {
+  position: relative;
+  width: 4.5rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+}
+
+.wrapper {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 1.2rem;
+  margin: 0.5rem;
+  border: 2px solid var(--text-color);
+
+  & input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+}
+
+.wrapper::before,
+.wrapper::after {
+  position: relative;
+  font-size: 70%;
+  font-weight: bolder;
+  display: block;
+  height: 80%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s
+}
+
+.wrapper::before {
+  content: "EN";
+  top: 10%;
+  left: 5%;
+  color: var(--background-color);
+  background-color: var(--text-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.wrapper::after {
+  content: "EN\00a0\00a0\00a0PT"; /* So sketchy XD */
+  bottom: 70%;
+  right: 2%;
+  width: 100%;
+  color: var(--text-color)
+}
+
+.wrapper:has(input:checked) {
+  &::before {
+    content: "PT";
+    transform: translateX(1.5rem); /* .wrapper width */
+  }
+}
