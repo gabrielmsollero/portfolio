@@ -7,6 +7,7 @@ import WaveSpacedSection from "./Utils/WaveSpacedSection";
 import GithubIcon from "./Utils/Icons/GithubIcon";
 import LinkedinIcon from "./Utils/Icons/LinkedinIcon";
 import MailIcon from "./Utils/Icons/MailIcon";
+import MediumIcon from "./Utils/Icons/MediumIcon";
 import TelegramIcon from "./Utils/Icons/TelegramIcon";
 import WhatsappIcon from "./Utils/Icons/WhatsappIcon";
 
@@ -30,6 +31,11 @@ const medias: Media[] = [
     id: "github",
     href: "https://github.com/gabrielmsollero/",
     icon: <GithubIcon className={classes.mediaIcon} />,
+  },
+  {
+    id: "medium",
+    href: "https://medium.com/@gabrielsollero",
+    icon: <MediumIcon className={classes.mediaIcon} />,
   },
   {
     id: "mail",
