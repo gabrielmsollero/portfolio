@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+import angularImg from "../../../assets/tech-icons/angular.webp";
 import awsImg from "../../../assets/tech-icons/aws.webp";
 import bootstrapImg from "../../../assets/tech-icons/bootstrap.webp";
 import cssImg from "../../../assets/tech-icons/css.webp";
@@ -57,6 +58,11 @@ const techs: Tech[] = [
   {
     name: "react",
     imgSrc: reactImg,
+    hoverNode: <></>,
+  },
+  {
+    name: "angular",
+    imgSrc: angularImg,
     hoverNode: <></>,
   },
   {
