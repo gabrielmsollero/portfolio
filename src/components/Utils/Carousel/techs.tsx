@@ -1,22 +1,25 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import angularImg from "../../../assets/tech-icons/angular.webp";
-import awsImg from "../../../assets/tech-icons/aws.webp";
-import bootstrapImg from "../../../assets/tech-icons/bootstrap.webp";
-import cssImg from "../../../assets/tech-icons/css.webp";
-import dockerImg from "../../../assets/tech-icons/docker.webp";
-import electronImg from "../../../assets/tech-icons/electron.webp";
-import flaskImg from "../../../assets/tech-icons/flask.webp";
-import htmlImg from "../../../assets/tech-icons/html.webp";
-import javascriptImg from "../../../assets/tech-icons/javascript.webp";
-import jqueryImg from "../../../assets/tech-icons/jquery.webp";
-import mongodbImg from "../../../assets/tech-icons/mongodb.webp";
-import mysqlImg from "../../../assets/tech-icons/mysql.webp";
-import nodejsImg from "../../../assets/tech-icons/nodejs.webp";
-import noderedImg from "../../../assets/tech-icons/nodered.webp";
-import reactImg from "../../../assets/tech-icons/react.webp";
-import seleniumImg from "../../../assets/tech-icons/selenium.webp";
-import typescriptImg from "../../../assets/tech-icons/typescript.webp";
+import awsImg from '../../../assets/tech-icons/aws.webp';
+import azureImg from '../../../assets/tech-icons/azure.webp';
+import bootstrapImg from '../../../assets/tech-icons/bootstrap.webp';
+import cssImg from '../../../assets/tech-icons/css.webp';
+import dockerImg from '../../../assets/tech-icons/docker.webp';
+import electronImg from '../../../assets/tech-icons/electron.webp';
+import flaskImg from '../../../assets/tech-icons/flask.webp';
+import htmlImg from '../../../assets/tech-icons/html.webp';
+import javascriptImg from '../../../assets/tech-icons/javascript.webp';
+import mongodbImg from '../../../assets/tech-icons/mongodb.webp';
+import mysqlImg from '../../../assets/tech-icons/mysql.webp';
+import nestjsImg from '../../../assets/tech-icons/nest.webp';
+import nodejsImg from '../../../assets/tech-icons/nodejs.webp';
+import noderedImg from '../../../assets/tech-icons/nodered.webp';
+import postgresImg from '../../../assets/tech-icons/postgres.webp';
+import reactImg from '../../../assets/tech-icons/react.webp';
+import seleniumImg from '../../../assets/tech-icons/selenium.webp';
+import shadcnImg from '../../../assets/tech-icons/shadcn.webp';
+import tailwindImg from '../../../assets/tech-icons/tailwind.webp';
+import typescriptImg from '../../../assets/tech-icons/typescript.webp';
 
 type Tech = {
   name: string;
@@ -26,87 +29,102 @@ type Tech = {
 
 const techs: Tech[] = [
   {
-    name: "flask",
+    name: 'flask',
     imgSrc: flaskImg,
     hoverNode: <></>,
   },
   {
-    name: "nodejs",
+    name: 'shadcn',
+    imgSrc: shadcnImg,
+    hoverNode: <></>,
+  },
+  {
+    name: 'nodejs',
     imgSrc: nodejsImg,
     hoverNode: <></>,
   },
   {
-    name: "docker",
+    name: 'nestjs',
+    imgSrc: nestjsImg,
+    hoverNode: <></>,
+  },
+  {
+    name: 'docker',
     imgSrc: dockerImg,
     hoverNode: <></>,
   },
   {
-    name: "aws",
+    name: 'aws',
     imgSrc: awsImg,
     hoverNode: <></>,
   },
   {
-    name: "mongodb",
+    name: 'azure',
+    imgSrc: azureImg,
+    hoverNode: <></>,
+  },
+  {
+    name: 'mongodb',
     imgSrc: mongodbImg,
     hoverNode: <></>,
   },
   {
-    name: "mysql",
+    name: 'mysql',
     imgSrc: mysqlImg,
     hoverNode: <></>,
   },
   {
-    name: "react",
+    name: 'postgres',
+    imgSrc: postgresImg,
+    hoverNode: <></>,
+  },
+  {
+    name: 'react',
     imgSrc: reactImg,
     hoverNode: <></>,
   },
   {
-    name: "angular",
-    imgSrc: angularImg,
+    name: 'tailwind',
+    imgSrc: tailwindImg,
     hoverNode: <></>,
   },
   {
-    name: "bootstrap",
+    name: 'bootstrap',
     imgSrc: bootstrapImg,
     hoverNode: <></>,
   },
   {
-    name: "jquery",
-    imgSrc: jqueryImg,
-    hoverNode: <></>,
-  },
-  {
-    name: "nodered",
+    name: 'nodered',
     imgSrc: noderedImg,
     hoverNode: <></>,
   },
   {
-    name: "electron",
+    name: 'electron',
     imgSrc: electronImg,
     hoverNode: <></>,
   },
   {
-    name: "selenium",
+    name: 'selenium',
     imgSrc: seleniumImg,
     hoverNode: <></>,
   },
   {
-    name: "typescript",
+    name: 'typescript',
     imgSrc: typescriptImg,
     hoverNode: <></>,
   },
   {
-    name: "html",
+    name: 'html',
     imgSrc: htmlImg,
     hoverNode: <></>,
   },
   {
-    name: "css",
+    name: 'css',
     imgSrc: cssImg,
     hoverNode: <></>,
   },
   {
-    name: "javascript",
+    name: 'javascript',
     imgSrc: javascriptImg,
     hoverNode: <></>,
   },
