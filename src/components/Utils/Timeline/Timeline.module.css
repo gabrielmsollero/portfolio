@@ -4,7 +4,7 @@
   list-style: none;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 50%;
@@ -85,6 +85,7 @@
     position: relative;
     width: 100%;
     object-fit: scale-down;
+    background-color: white;
   }
 }
 
@@ -99,7 +100,7 @@
   color: var(--dark-gray);
 
   &::after {
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     position: absolute;
