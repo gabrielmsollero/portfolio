@@ -10,6 +10,7 @@ import altaLogo from '../assets/alta.webp';
 import electricfishLogo from '../assets/electricfish.webp';
 import hartLogo from '../assets/hart.webp';
 import kyrosLogo from '../assets/kyros.webp';
+import thoughtfulLogo from '../assets/thoughtful.webp';
 
 import classes from './ProfessionalExperience.module.css';
 
@@ -18,8 +19,68 @@ export default function ProfessionalExprience() {
 
   const timeLineItems: TimelineItemType[] = [
     {
+      imageSrc: thoughtfulLogo,
+      dateText: ctx!.lang === 'pt' ? 'Set 24 - Hoje' : 'Sep 24 - Today',
+      content: (
+        <>
+          <h2>
+            Thoughtful AI&nbsp;
+            <RedirectIcon href="https://www.thoughtful.ai/" />
+          </h2>
+          <ul className={classes.jobBulletPoints}>
+            {ctx!.lang === 'pt' ? (
+              <>
+                <li>Automação de processos com Python, IA e RPA</li>
+                <li>
+                  Tive a oportunidade de contribuir significativamente para o
+                  projeto open-source{' '}
+                  <a href="https://github.com/robocorp/rpaframework">
+                    rpaframework
+                  </a>{' '}
+                  (Python)
+                </li>
+                <li>
+                  Desenvolvi e trabalhei na sustentação de diversas automações
+                  envolvendo plataformas de RCM da área da saúde
+                </li>
+                <li>
+                  Desenvolvi de ponta a ponta um produto interno para
+                  identificação de vulnerabilidades nas bibliotecas utilizadas
+                  pelos agentes de IA (utilizando{' '}
+                  <a href="https://snyk.io/">Snyk</a>), e criação de tickets
+                  para facilitar e agilizar a eliminação destas.
+                </li>
+              </>
+            ) : (
+              <>
+                <li>Process Automation with Python, AI, and RPA</li>
+                <li>
+                  Had the opportunity to make significant contributions to the
+                  open-source project{' '}
+                  <a href="https://github.com/robocorp/rpaframework">
+                    rpaframework
+                  </a>{' '}
+                  (Python).
+                </li>
+                <li>
+                  Developed and maintained several automation solutions
+                  involving RCM platforms in the healthcare sector.
+                </li>
+                <li>
+                  Designed and implemented an internal product from scratch to
+                  identify vulnerabilities in the libraries used by AI agents
+                  (leveraging <a href="https://snyk.io/">Snyk</a>), as well as
+                  to create tickets to streamline and expedite their resolution.
+                </li>
+              </>
+            )}
+          </ul>
+        </>
+      ),
+    },
+    {
       imageSrc: electricfishLogo,
-      dateText: ctx!.lang === 'pt' ? 'Dez 21 - Hoje' : 'Dec 21 - Today',
+      dateText: ctx!.lang === 'pt' ? 'Dez 21 - Set 24' : 'Dec 21 - Sep 24',
       content: (
         <>
           <h2>
